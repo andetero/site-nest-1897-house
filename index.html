@@ -73,9 +73,30 @@ footer{border-top:1px solid var(--line);text-align:center;padding:24px;color:var
  .acts .btn{width:100%;text-align:center}
  .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;text-align:center;z-index:9;box-shadow:0 10px 28px var(--shadow)}
 }
+picture.ph{display:block}picture.ph img{display:block;width:100%;height:auto}
+.frame{padding:46px 0 10px}
+.frame picture{border:3px double var(--line);padding:8px;background:var(--card)}
+.frame picture img{height:clamp(220px,38vw,440px);object-fit:cover}
+.goods{list-style:none;margin:6px 0 22px;padding:0}
+.goods li{padding:12px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:9rem 1fr;gap:14px;align-items:baseline}
+.goods li b{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;font-size:1.4rem}
+.goods li span{color:var(--muted)}
+.goods li:nth-child(2),.goods li:nth-child(4){padding-left:6%}
+.story{background:var(--teal-soft);padding:64px 0}
+.story .w{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr) minmax(0,.7fr);gap:36px;align-items:start}
+.story h2{margin:0 0 14px}
+.story p{font-family:"Libre Caslon Text",Georgia,serif;font-size:1.12rem;line-height:1.7;margin:0 0 14px}
+.story picture{border:1px solid var(--line)}
+.story picture.lo{margin-top:80px}
+.visit .area{color:var(--muted)}
+.last{border-top:3px double var(--line);text-align:center;padding:56px 24px 60px}
+.last h2{margin:0 0 6px}
+.last p{color:var(--muted);margin:0 0 22px}
+@media (max-width:800px){.story .w{grid-template-columns:1fr 1fr}.story .w>div{grid-column:1/-1}.story picture.lo{margin-top:30px}.goods li{grid-template-columns:1fr;gap:0}.goods li:nth-child(2),.goods li:nth-child(4){padding-left:0}}
 </style>
 </head>
 <body>
+<!-- Placeholder photos: royalty-free stock images (Unsplash License, details in CREDITS.md). They are not of this business. Replace them with the client's own real photos before handoff. -->
 <main>
 <header class="sign" aria-labelledby="h">
  <div class="w">
@@ -91,21 +112,40 @@ footer{border-top:1px solid var(--line);text-align:center;padding:24px;color:var
  </div>
 </header>
 
+<div class="frame"><div class="w"><picture class="ph"><source type="image/webp" srcset="img/hero.webp"><img src="img/hero.jpg" width="1600" height="860" alt="Racks of clothing in warm, soft light" fetchpriority="high" decoding="async"></picture></div></div>
+
 <section class="find" aria-labelledby="f-h">
  <div class="w">
   <div class="prose">
    <h2 id="f-h">In the shop</h2>
-   <p>Gifts, clothing, jewelry and antiques.</p>
-   <p>Shoppers mention unique items, reasonable prices and a welcoming, friendly shop.</p>
+   <ul class="goods">
+    <li><b>Gifts</b><span>Gift ideas for all kinds of occasions.</span></li>
+    <li><b>Clothing</b><span>Clothing and apparel.</span></li>
+    <li><b>Jewelry</b><span>Jewelry pieces to wear or give.</span></li>
+    <li><b>Antiques</b><span>Older pieces and antique finds.</span></li>
+   </ul>
   </div>
   <aside class="hours" aria-label="Hours">
    <h3>Open</h3>
    <table>
+    <tr><td>Monday</td><td>11 AM &ndash; 4 PM</td></tr>
     <tr><td>Tuesday &ndash; Saturday</td><td>10 AM &ndash; 5 PM</td></tr>
-    <tr><td>Sunday &amp; Monday</td><td>11 AM &ndash; 4 PM</td></tr>
+    <tr><td>Sunday</td><td>11 AM &ndash; 4 PM</td></tr>
    </table>
    <p>Hours as listed on Google.</p>
   </aside>
+ </div>
+</section>
+
+<section class="story" aria-labelledby="a-h">
+ <div class="w">
+  <picture class="ph"><source type="image/webp" srcset="img/a.webp"><img src="img/a.jpg" width="900" height="675" alt="Necklaces and bracelets laid out on a table" loading="lazy" decoding="async"></picture>
+  <div>
+   <h2 id="a-h">About the shop</h2>
+   <p>The Nest at the 1897 House is a gift shop at 286 Main Street in Elizabeth, with gifts, clothing, jewelry and antiques under one roof.</p>
+   <p>Shoppers mention unique items, reasonable prices and a welcoming, friendly shop. It holds a 4.7-star rating from 31 Google reviews.</p>
+  </div>
+  <picture class="ph lo"><source type="image/webp" srcset="img/b.webp"><img src="img/b.jpg" width="900" height="1150" alt="Vintage teacups, saucers and brass pieces on a table" loading="lazy" decoding="async"></picture>
  </div>
 </section>
 
@@ -115,11 +155,20 @@ footer{border-top:1px solid var(--line);text-align:center;padding:24px;color:var
    <h2 id="v-h">Come by</h2>
    <address>286 Main St<br>Elizabeth, CO 80107</address>
    <p><a href="tel:+17206435124">(720) 643-5124</a></p>
+   <p>Mon 11&ndash;4 &middot; Tue&ndash;Sat 10&ndash;5 &middot; Sun 11&ndash;4</p>
+   <p class="area">On Main Street in Elizabeth, Elbert County, Colorado.</p>
    <p><a href="https://www.facebook.com/thenest1897/" target="_blank" rel="noopener">The Nest on Facebook</a></p>
-   <p>4.7 stars from 31 Google reviews. <a href="https://www.google.com/maps/place/The+Nest+at+the+1897+House/@39.3602197,-104.5951538,17z/data=!4m6!3m5!1s0x876cc101dda9b691:0x6aaf56b1a7e013a!8m2!3d39.3602197!4d-104.5951538!16s%2Fg%2F11nxc3w6xs" target="_blank" rel="noopener">See us on Google</a></p>
-   <p style="margin-top:18px"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=286%20Main%20St%2C%20Elizabeth%2C%20CO%2080107" target="_blank" rel="noopener">Directions</a></p>
   </div>
   <iframe title="Map of 286 Main St, Elizabeth, CO" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=The%20Nest%20at%20the%201897%20House%2C%20286%20Main%20St%2C%20Elizabeth%2C%20CO%2080107&amp;z=16&amp;output=embed"></iframe>
+ </div>
+</section>
+
+<section class="last" aria-labelledby="l-h">
+ <h2 id="l-h">Visit the shop</h2>
+ <p>286 Main St, Elizabeth &middot; (720) 643-5124</p>
+ <div class="acts">
+  <a class="btn" href="tel:+17206435124">Call (720) 643-5124</a>
+  <a class="btn line" href="https://www.google.com/maps/dir/?api=1&amp;destination=286%20Main%20St%2C%20Elizabeth%2C%20CO%2080107" target="_blank" rel="noopener">Directions</a>
  </div>
 </section>
 </main>
